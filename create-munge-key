@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# not sure 
+# refer: https://www.slothparadise.com/how-to-install-slurm-on-centos-7-cluster/
+yum install rng-tools -y
+rngd -r /dev/urandom
+
 # Generate a pseudorandom MUNGE key
 dd if=/dev/urandom bs=1 count=1024 > /etc/munge/munge.key
 chown munge: /etc/munge/munge.key
